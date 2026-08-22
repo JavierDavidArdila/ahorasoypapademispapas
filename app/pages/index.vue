@@ -135,16 +135,19 @@ useSeoMeta({
               <p class="text-sm text-[var(--color-tinta-suave)] leading-relaxed flex-1">
                 {{ servicio.resumenCorto }}
               </p>
-              <component
-                :is="servicio.disponible ? 'NuxtLink' : 'span'"
-                :to="servicio.disponible ? rutaServicio(servicio) : undefined"
-                class="mt-2 inline-flex w-fit items-center gap-2 rounded-[var(--radius-editorial)] border-2 px-4 py-2 kicker transition-colors"
-                :class="servicio.disponible
-                  ? 'border-[var(--color-amarillo)] text-[var(--color-azul-alto)] hover:bg-[var(--color-amarillo)]'
-                  : 'border-[var(--color-linea)] text-[var(--color-tinta-suave)] cursor-not-allowed'"
+              <NuxtLink
+                v-if="servicio.disponible"
+                :to="rutaServicio(servicio)"
+                class="mt-2 inline-flex w-fit items-center gap-2 rounded-[var(--radius-editorial)] border-2 px-4 py-2 kicker transition-colors border-[var(--color-amarillo)] text-[var(--color-azul-alto)] hover:bg-[var(--color-amarillo)]"
               >
                 {{ textoCta(servicio) }}
-              </component>
+              </NuxtLink>
+              <span
+                v-else
+                class="mt-2 inline-flex w-fit items-center gap-2 rounded-[var(--radius-editorial)] border-2 px-4 py-2 kicker transition-colors border-[var(--color-linea)] text-[var(--color-tinta-suave)] cursor-not-allowed"
+              >
+                {{ textoCta(servicio) }}
+              </span>
             </div>
           </div>
         </div>

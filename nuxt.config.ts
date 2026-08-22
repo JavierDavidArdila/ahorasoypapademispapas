@@ -16,6 +16,10 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css', '~/assets/css/typography.css'],
 
+  nitro: {
+    preset: 'static',
+  },
+
   icon: {
     mode: 'svg',
   },

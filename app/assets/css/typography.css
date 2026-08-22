@@ -1,0 +1,55 @@
+.prose-editorial :where(h2) {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.prose-editorial :where(h3) {
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.prose-editorial :where(ul) {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.prose-editorial :where(li) {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.prose-editorial :where(li)::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--color-terracota);
+}
+
+.prose-editorial :where(ol) {
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.prose-editorial :where(a) {
+  color: var(--color-terracota);
+  text-decoration: underline;
+}
+
+.prose-editorial :where(strong) {
+  color: var(--color-tinta);
+}
+
+.prose-editorial :where(em) {
+  font-family: var(--font-display);
+}
+
+.prose-editorial :where(blockquote) {
+  border-left: 3px solid var(--color-linea);
+  padding-left: 1.5rem;
+  font-family: var(--font-display);
+  font-style: italic;
+}

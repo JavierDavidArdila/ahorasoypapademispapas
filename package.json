@@ -1,0 +1,33 @@
+{
+  "name": "ahorasoypapademispapas",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@nuxt/content": "3.15.2",
+    "@nuxt/eslint": "1.17.0",
+    "@nuxt/fonts": "0.14.0",
+    "@nuxt/icon": "2.5.0",
+    "@nuxt/image": "2.1.0",
+    "@nuxtjs/seo": "5.3.12",
+    "@takumi-rs/core": "^2.9.2",
+    "better-sqlite3": "^13.0.3",
+    "nuxt": "^4.5.2",
+    "vue": "^3.5.41",
+    "vue-router": "^5.2.0"
+  },
+  "devDependencies": {
+    "@iconify-json/ph": "^1.2.2",
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.3.10"
+  }
+}

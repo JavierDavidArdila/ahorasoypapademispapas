@@ -1,0 +1,28 @@
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+# Material fuente crudo (no usado en el sitio; las imágenes ya están en public/images)
+/Imagenes
+/referencias

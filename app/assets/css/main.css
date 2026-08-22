@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  /* Paleta — cálido y editorial */
+  --color-papel: #fbf6ef;
+  --color-papel-alto: #f3ead9;
+  --color-tinta: #2b2420;
+  --color-tinta-suave: #5a5044;
+  --color-terracota: #c1592c;
+  --color-terracota-alto: #a2461f;
+  --color-salvia: #6b7a5e;
+  --color-salvia-alto: #55624a;
+  --color-ocre: #d9a441;
+  --color-linea: #e4d9c7;
+
+  /* Paleta — corporativa azul (header, footer, home) */
+  --color-azul: #1c5fb0;
+  --color-azul-alto: #12417d;
+  --color-azul-medio: #2e78d1;
+  --color-azul-oscuro: #0e3a67;
+  --color-amarillo: #f5b12e;
+  --color-amarillo-alto: #d99715;
+
+  /* Tipografía */
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "Karla", "Helvetica Neue", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Espaciado editorial — prefijo "space" (no "spacing") a propósito:
+     Tailwind v4 genera max-w-*, w-*, etc. a partir de claves --spacing-xs..5xl,
+     así que reutilizar ese namespace pisaba utilidades como max-w-3xl. */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 8rem;
+  --space-5xl: 12rem;
+
+  --radius-editorial: 0.5rem;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-papel);
+    color: var(--color-tinta);
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background-color: var(--color-ocre);
+    color: var(--color-tinta);
+  }
+
+  a {
+    text-underline-offset: 3px;
+  }
+}
+
+@layer utilities {
+  .kicker {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+  }
+}

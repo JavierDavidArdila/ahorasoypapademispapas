@@ -29,7 +29,7 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: 'https://ahorasoypapademispapas.vercel.app',
+    url: 'https://ahorasoypapademispapas.david-ardila.workers.dev',
     name: 'Ahora soy papá de mis papás',
     description:
       'Fernando Roca Correa — cuidador, conferencista y mentor de familia. Recursos, formación y acompañamiento para el cuidado de personas mayores.',

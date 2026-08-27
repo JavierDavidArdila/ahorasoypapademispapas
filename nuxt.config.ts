@@ -24,6 +24,12 @@ export default defineNuxtConfig({
     mode: 'svg',
   },
 
+  // El sitio usa Arial (fuente de sistema); las imágenes OG necesitan una
+  // fuente descargable, así que se les fija una propia sin afectar el sitio.
+  ogImage: {
+    fonts: ['Inter:400', 'Inter:700'],
+  },
+
   vite: {
     plugins: [tailwindcss()],
   },
@@ -34,14 +40,6 @@ export default defineNuxtConfig({
     description:
       'Fernando Roca Correa — cuidador, conferencista y mentor de familia. Recursos, formación y acompañamiento para el cuidado de personas mayores.',
     defaultLocale: 'es',
-  },
-
-  fonts: {
-    families: [
-      { name: 'Fraunces', provider: 'google', weights: [400, 500, 600], styles: ['normal', 'italic'] },
-      { name: 'Karla', provider: 'google', weights: [400, 500, 700] },
-      { name: 'IBM Plex Mono', provider: 'google', weights: [500] },
-    ],
   },
 
   runtimeConfig: {

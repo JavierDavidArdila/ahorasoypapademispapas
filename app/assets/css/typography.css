@@ -24,7 +24,7 @@
   content: "—";
   position: absolute;
   left: 0;
-  color: var(--color-terracota);
+  color: var(--color-azul);
 }
 
 .prose-editorial :where(ol) {
@@ -35,7 +35,7 @@
 }
 
 .prose-editorial :where(a) {
-  color: var(--color-terracota);
+  color: var(--color-azul);
   text-decoration: underline;
 }
 

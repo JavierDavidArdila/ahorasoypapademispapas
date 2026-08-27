@@ -21,10 +21,10 @@
   --color-amarillo: #f5b12e;
   --color-amarillo-alto: #d99715;
 
-  /* Tipografía */
-  --font-display: "Fraunces", "Georgia", serif;
-  --font-body: "Karla", "Helvetica Neue", sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  /* Tipografía — una sola familia sans en todo el sitio */
+  --font-display: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --font-body: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --font-mono: Arial, "Helvetica Neue", Helvetica, sans-serif;
 
   /* Espaciado editorial — prefijo "space" (no "spacing") a propósito:
      Tailwind v4 genera max-w-*, w-*, etc. a partir de claves --spacing-xs..5xl,

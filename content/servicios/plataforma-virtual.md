@@ -1,6 +1,6 @@
 ---
 titulo: "Plataforma virtual de cuidado"
-resumenCorto: "Un espacio digital para cuidadores, con recursos, comunidad y acompañamiento — próximamente disponible."
+resumenCorto: "Un espacio digital para cuidadores, con recursos, comunidad y acompañamiento. Próximamente disponible."
 icono: ph:device-mobile-camera
 orden: 6
 disponible: false

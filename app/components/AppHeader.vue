@@ -64,7 +64,7 @@ const enlaces = [
                 v-for="servicio in servicios"
                 :key="servicio.path"
                 :to="rutaServicio(servicio)"
-                class="block px-4 py-2.5 text-sm text-[var(--color-tinta)] hover:bg-[var(--color-papel-alto)] hover:text-[var(--color-azul)] transition-colors"
+                class="block px-4 py-2.5 text-sm font-medium text-[var(--color-azul)] hover:bg-[var(--color-papel-alto)] hover:text-[var(--color-azul-alto)] transition-colors"
                 @click="dropdownAbierto = false"
               >
                 {{ servicio.titulo }}
@@ -122,7 +122,7 @@ const enlaces = [
           v-for="servicio in servicios"
           :key="servicio.path"
           :to="rutaServicio(servicio)"
-          class="py-1.5 text-sm text-[var(--color-tinta-suave)]"
+          class="py-1.5 text-sm font-medium text-[var(--color-azul)]"
           @click="menuAbierto = false"
         >
           {{ servicio.titulo }}

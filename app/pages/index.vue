@@ -46,6 +46,29 @@ function desplazarApoyo(direccion: 1 | -1) {
   carruselApoyo.value?.scrollBy({ left: direccion * 320, behavior: 'smooth' })
 }
 
+let autoApoyo: ReturnType<typeof setInterval> | undefined
+const apoyoPausado = ref(false)
+
+function avanzarAuto() {
+  const el = carruselApoyo.value
+  if (!el || apoyoPausado.value) return
+  const finReal = el.scrollWidth - el.clientWidth - 4
+  if (el.scrollLeft >= finReal) {
+    el.scrollTo({ left: 0, behavior: 'smooth' })
+  }
+  else {
+    el.scrollBy({ left: 240, behavior: 'smooth' })
+  }
+}
+
+onMounted(() => {
+  autoApoyo = setInterval(avanzarAuto, 2500)
+})
+
+onBeforeUnmount(() => {
+  if (autoApoyo) clearInterval(autoApoyo)
+})
+
 const prensaDestacada = [
   {
     medio: 'RCN TV',
@@ -55,7 +78,7 @@ const prensaDestacada = [
   {
     medio: 'Univision',
     detalle: 'Al punto con Jorge Ramos — USA',
-    imagen: '/images/prensa/univision-jorge-ramos.png',
+    imagen: '/images/prensa/jorge-ramos-entrevista.jpg',
   },
   {
     medio: 'Blu Radio',
@@ -138,7 +161,7 @@ useSeoMeta({
               <NuxtLink
                 v-if="servicio.disponible"
                 :to="rutaServicio(servicio)"
-                class="mt-2 inline-flex w-fit items-center gap-2 rounded-[var(--radius-editorial)] border-2 px-4 py-2 kicker transition-colors border-[var(--color-amarillo)] text-[var(--color-azul-alto)] hover:bg-[var(--color-amarillo)]"
+                class="mt-2 inline-flex w-fit items-center gap-2 rounded-[var(--radius-editorial)] bg-[var(--color-azul)] px-4 py-2 kicker text-white transition-colors hover:bg-[var(--color-azul-alto)]"
               >
                 {{ textoCta(servicio) }}
               </NuxtLink>
@@ -163,10 +186,10 @@ useSeoMeta({
           <NuxtImg
             src="/images/bio/home-bio.png"
             alt="Fernando Roca Correa"
-            class="w-48 rounded-[var(--radius-editorial)] object-cover"
+            class="w-full max-w-md mx-auto rounded-[var(--radius-editorial)] object-cover shadow-md"
             loading="lazy"
-            width="480"
-            height="600"
+            width="640"
+            height="426"
           />
           <p class="text-[var(--color-tinta-suave)] leading-relaxed">
             Fundador de <strong>Ahora soy papá de mis papás / Cuidar es 360 SAS</strong>, es
@@ -199,7 +222,14 @@ useSeoMeta({
     <section class="bg-[var(--color-azul)]">
       <div class="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <h2 class="text-2xl md:text-3xl font-bold text-white text-center mb-10">Con el apoyo de:</h2>
-        <div class="flex items-center gap-4">
+        <div
+          class="flex items-center gap-4"
+          @mouseenter="apoyoPausado = true"
+          @mouseleave="apoyoPausado = false"
+          @focusin="apoyoPausado = true"
+          @focusout="apoyoPausado = false"
+          @touchstart="apoyoPausado = true"
+        >
           <button
             type="button"
             aria-label="Anterior"

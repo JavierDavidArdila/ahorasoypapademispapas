@@ -10,6 +10,17 @@ const asunto = ref('')
 const mensaje = ref('')
 const honeypot = ref('')
 
+const asuntos = [
+  'Libro',
+  'Conferencias y cursos',
+  'Programa Trabajador-Cuidador',
+  'Des Cárgate',
+  'Mentorías de familia',
+  'Plataforma virtual',
+  'Prensa / medios',
+  'Otro',
+]
+
 const estado = ref<'inactivo' | 'enviando' | 'exito' | 'error'>('inactivo')
 
 const claveConfigurada = computed(() => Boolean(config.public.web3formsKey))
@@ -139,12 +150,14 @@ useSeoMeta({
 
       <div class="flex flex-col gap-2">
         <label for="asunto" class="text-sm text-[var(--color-azul)]">Escoge el asunto</label>
-        <input
+        <select
           id="asunto"
           v-model="asunto"
-          type="text"
           class="border border-[var(--color-linea)] rounded-[var(--radius-editorial)] px-4 py-2.5 bg-transparent focus:outline-none focus:border-[var(--color-azul)]"
         >
+          <option value="" disabled>Selecciona una opción</option>
+          <option v-for="opcion in asuntos" :key="opcion" :value="opcion">{{ opcion }}</option>
+        </select>
       </div>
 
       <div class="flex flex-col gap-2">
@@ -170,7 +183,7 @@ useSeoMeta({
       <button
         type="submit"
         :disabled="estado === 'enviando'"
-        class="w-fit rounded-[var(--radius-editorial)] border-2 border-[var(--color-amarillo)] px-6 py-3 kicker text-[var(--color-azul-alto)] hover:bg-[var(--color-amarillo)] transition-colors disabled:opacity-60"
+        class="w-fit rounded-[var(--radius-editorial)] bg-[var(--color-azul)] px-6 py-3 kicker text-white hover:bg-[var(--color-azul-alto)] transition-colors disabled:opacity-60"
       >
         {{ estado === 'enviando' ? 'Enviando…' : 'Enviar' }}
       </button>

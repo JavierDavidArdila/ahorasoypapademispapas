@@ -48,7 +48,7 @@ useSeoMeta({
 
       <a
         href="/contacto"
-        class="inline-flex w-fit items-center gap-2 rounded-[var(--radius-editorial)] border-2 border-[var(--color-amarillo)] px-6 py-3 kicker text-[var(--color-azul-alto)] hover:bg-[var(--color-amarillo)] transition-colors"
+        class="inline-flex w-fit items-center gap-2 rounded-[var(--radius-editorial)] bg-[var(--color-azul)] px-6 py-3 kicker text-white hover:bg-[var(--color-azul-alto)] transition-colors"
       >
         Contáctalo aquí
       </a>

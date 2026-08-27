@@ -15,7 +15,7 @@ const legal = [
 </script>
 
 <template>
-  <footer class="bg-[var(--color-azul-oscuro)] text-white mt-[var(--space-4xl)]">
+  <footer class="bg-[var(--color-azul-oscuro)] text-white">
     <div class="mx-auto max-w-6xl px-6 py-16 grid gap-12 md:grid-cols-3">
       <div class="flex flex-col gap-3">
         <p class="text-xl" style="font-family: var(--font-display)">Fernando Roca Correa</p>
@@ -31,9 +31,9 @@ const legal = [
           <Icon name="ph:envelope-simple" class="size-4" />
           fernando@ahorasoypapademispapas.com
         </a>
-        <a href="tel:+573122040393" class="flex items-center gap-2 text-sm hover:underline">
+        <a href="tel:+573153350785" class="flex items-center gap-2 text-sm hover:underline">
           <Icon name="ph:whatsapp-logo" class="size-4" />
-          +57 312 204 0393
+          +57 315 335 0785
         </a>
       </div>
 

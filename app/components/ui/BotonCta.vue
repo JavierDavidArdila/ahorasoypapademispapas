@@ -17,8 +17,8 @@ withDefaults(
     class="inline-flex items-center gap-2 rounded-[var(--radius-editorial)] px-6 py-3 font-medium transition-colors duration-150"
     :class="
       variante === 'primario'
-        ? 'bg-[var(--color-terracota)] text-[var(--color-papel)] hover:bg-[var(--color-terracota-alto)]'
-        : 'border border-[var(--color-tinta)] text-[var(--color-tinta)] hover:bg-[var(--color-tinta)] hover:text-[var(--color-papel)]'
+        ? 'bg-[var(--color-azul)] text-white hover:bg-[var(--color-azul-alto)]'
+        : 'border-2 border-[var(--color-azul)] text-[var(--color-azul-alto)] hover:bg-[var(--color-azul)] hover:text-white'
     "
   >
     <slot />

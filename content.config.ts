@@ -43,6 +43,7 @@ export default defineContentConfig({
         reconocimiento: z.string().optional(),
         servicioRelacionado: z.string().optional(),
         foto: z.string().optional(),
+        logoEntidad: z.string().optional(),
         destacadoEnHome: z.boolean().default(false),
         orden: z.number().default(0),
       }),

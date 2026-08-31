@@ -40,50 +40,27 @@ const apoyo = [
   { nombre: 'iConversación — Instituto de la Conversación', logo: '/images/apoyo/iconversacion.png' },
 ]
 
-const carruselApoyo = ref<HTMLElement | null>(null)
-
-function desplazarApoyo(direccion: 1 | -1) {
-  carruselApoyo.value?.scrollBy({ left: direccion * 320, behavior: 'smooth' })
-}
-
-let autoApoyo: ReturnType<typeof setInterval> | undefined
-const apoyoPausado = ref(false)
-
-function avanzarAuto() {
-  const el = carruselApoyo.value
-  if (!el || apoyoPausado.value) return
-  const finReal = el.scrollWidth - el.clientWidth - 4
-  if (el.scrollLeft >= finReal) {
-    el.scrollTo({ left: 0, behavior: 'smooth' })
-  }
-  else {
-    el.scrollBy({ left: 240, behavior: 'smooth' })
-  }
-}
-
-onMounted(() => {
-  autoApoyo = setInterval(avanzarAuto, 2500)
-})
-
-onBeforeUnmount(() => {
-  if (autoApoyo) clearInterval(autoApoyo)
-})
+// La cinta se duplica para lograr un desplazamiento infinito sin saltos.
+const apoyoCinta = [...apoyo, ...apoyo]
 
 const prensaDestacada = [
   {
     medio: 'RCN TV',
     detalle: 'Colombia',
     imagen: '/images/prensa/rcn-tv.png',
+    url: 'https://www.youtube.com/watch?v=-aQihbNpTfc',
   },
   {
     medio: 'Univision',
     detalle: 'Al punto con Jorge Ramos — USA',
     imagen: '/images/prensa/jorge-ramos-entrevista.jpg',
+    url: 'https://www.youtube.com/watch?v=cUYoAXlBMWU',
   },
   {
     medio: 'Blu Radio',
     detalle: 'Píldora del cuidado — En Blu Jeans',
     imagen: '/images/prensa/blu-radio.jpg',
+    url: 'https://www.bluradio.com/en-blu-jeans/31-de-octubre-de-2021-en-blu-jeans-programa-completo',
   },
 ]
 
@@ -108,10 +85,12 @@ useSeoMeta({
     <!-- Prensa destacada -->
     <section class="bg-white pb-20 md:pb-28">
       <div class="mx-auto max-w-6xl px-6 grid sm:grid-cols-3 gap-6">
-        <NuxtLink
+        <a
           v-for="entrada in prensaDestacada"
           :key="entrada.medio"
-          to="/prensa"
+          :href="entrada.url"
+          target="_blank"
+          rel="noopener"
           class="group flex flex-col gap-3 rounded-[var(--radius-editorial)] border border-[var(--color-linea)] overflow-hidden hover:shadow-md transition-shadow"
         >
           <div class="aspect-video overflow-hidden bg-[var(--color-papel-alto)]">
@@ -128,7 +107,7 @@ useSeoMeta({
             <p class="text-lg font-semibold text-[var(--color-azul-alto)]">{{ entrada.medio }}</p>
             <p class="kicker text-[var(--color-tinta-suave)] mt-1">{{ entrada.detalle }}</p>
           </div>
-        </NuxtLink>
+        </a>
       </div>
     </section>
 
@@ -205,7 +184,7 @@ useSeoMeta({
             :key="testimonio.id"
             class="border-b border-[var(--color-linea)] pb-8 last:border-b-0"
           >
-            <blockquote class="italic text-[var(--color-tinta)] leading-relaxed" style="font-family: var(--font-display)">
+            <blockquote class="italic text-[var(--color-tinta)] leading-relaxed [&_p:not(:last-child)]:mb-3" style="font-family: var(--font-display)">
               <ContentRenderer :value="testimonio" />
             </blockquote>
             <p class="text-lg font-bold text-[var(--color-azul-alto)] mt-4 pb-1 w-fit border-b-2 border-[var(--color-amarillo)]">
@@ -214,6 +193,7 @@ useSeoMeta({
             <p v-if="testimonio.rolOCargo" class="text-sm text-[var(--color-tinta-suave)] mt-1 max-w-sm">{{ testimonio.rolOCargo }}</p>
             <p v-if="testimonio.servicioRelacionado" class="kicker text-[var(--color-azul)] mt-1">{{ testimonio.servicioRelacionado }}</p>
           </div>
+          <UiBotonCta to="/testimonios" variante="secundario" class="w-fit">Ver todos los testimonios</UiBotonCta>
         </div>
       </div>
     </section>
@@ -222,41 +202,23 @@ useSeoMeta({
     <section class="bg-[var(--color-azul)]">
       <div class="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <h2 class="text-2xl md:text-3xl font-bold text-white text-center mb-10">Con el apoyo de:</h2>
-        <div
-          class="flex items-center gap-4"
-          @mouseenter="apoyoPausado = true"
-          @mouseleave="apoyoPausado = false"
-          @focusin="apoyoPausado = true"
-          @focusout="apoyoPausado = false"
-          @touchstart="apoyoPausado = true"
-        >
-          <button
-            type="button"
-            aria-label="Anterior"
-            class="shrink-0 flex size-10 items-center justify-center rounded-full text-white hover:bg-white/10 transition-colors"
-            @click="desplazarApoyo(-1)"
-          >
-            <Icon name="ph:caret-left" class="size-6" />
-          </button>
-
-          <div ref="carruselApoyo" class="flex-1 flex items-center gap-10 overflow-x-auto scroll-smooth [scrollbar-width:none]">
-            <img
-              v-for="marca in apoyo"
-              :key="marca.nombre"
-              :src="marca.logo"
-              :alt="marca.nombre"
-              class="h-16 w-auto shrink-0 object-contain"
+        <div class="apoyo-marquee">
+          <ul class="apoyo-pista">
+            <li
+              v-for="(marca, i) in apoyoCinta"
+              :key="`${marca.nombre}-${i}`"
+              class="shrink-0"
+              :aria-hidden="i >= apoyo.length ? 'true' : undefined"
             >
-          </div>
-
-          <button
-            type="button"
-            aria-label="Siguiente"
-            class="shrink-0 flex size-10 items-center justify-center rounded-full text-white hover:bg-white/10 transition-colors"
-            @click="desplazarApoyo(1)"
-          >
-            <Icon name="ph:caret-right" class="size-6" />
-          </button>
+              <img
+                :src="marca.logo"
+                :alt="i >= apoyo.length ? '' : marca.nombre"
+                class="h-14 w-auto object-contain"
+                loading="lazy"
+                decoding="async"
+              >
+            </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -295,3 +257,56 @@ useSeoMeta({
     </section>
   </div>
 </template>
+
+<style scoped>
+.apoyo-marquee {
+  overflow: hidden;
+  /* Difuminado en los bordes para que la cinta entre y salga sin corte seco. */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+
+.apoyo-pista {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: apoyo-desliz 60s linear infinite;
+}
+
+.apoyo-pista > li {
+  /* Espacio como padding (no gap) para que el ancho de una copia sea exacto y -50% no salte. */
+  padding-inline: 2rem;
+}
+
+.apoyo-marquee:hover .apoyo-pista {
+  animation-play-state: paused;
+}
+
+/* La cinta es el doble de ancha (lista duplicada); mover -50% deja el punto de unión invisible. */
+@keyframes apoyo-desliz {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .apoyo-pista {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    row-gap: 2.5rem;
+  }
+  /* Sin animación no hace falta la segunda copia de la cinta. */
+  .apoyo-pista > li[aria-hidden="true"] {
+    display: none;
+  }
+  .apoyo-marquee {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+</style>

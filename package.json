@@ -27,6 +27,7 @@
   "devDependencies": {
     "@iconify-json/ph": "^1.2.2",
     "@tailwindcss/vite": "^4.3.3",
+    "@takumi-rs/wasm": "^2.13.5",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3",
     "vue-tsc": "^3.3.10"

@@ -64,8 +64,7 @@ export function useTestBienestar() {
     const resultado = calcularResultado()
 
     try {
-      const apiUrl = useRuntimeConfig().public.testBienestarApiUrl
-      await $fetch(apiUrl, {
+      await $fetch('/api/test-bienestar', {
         method: 'POST',
         body: {
           respuestas: respuestas.value,

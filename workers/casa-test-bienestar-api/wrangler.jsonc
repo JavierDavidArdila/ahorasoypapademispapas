@@ -1,0 +1,17 @@
+{
+  "name": "casa-test-bienestar-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-07-15",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "casa-test-bienestar-db",
+      "database_id": "720d3530-922f-4214-9e9b-3f09aaf109a9"
+    }
+  ],
+  "vars": {
+    // Ajusta esto al dominio real donde queda publicado el sitio Nuxt.
+    // Puedes poner varios orígenes separados por coma si usas dominio propio + el de workers.dev.
+    "ALLOWED_ORIGIN": "https://ahorasoypapademispapas.david-ardila.workers.dev"
+  }
+}

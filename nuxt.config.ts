@@ -45,6 +45,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       web3formsKey: process.env.NUXT_PUBLIC_WEB3FORMS_KEY || '',
+      testBienestarApiUrl:
+        process.env.NUXT_PUBLIC_TEST_BIENESTAR_API_URL ||
+        'https://casa-test-bienestar-api.<tu-subdominio>.workers.dev',
     },
   },
 

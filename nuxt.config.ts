@@ -17,7 +17,11 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css', '~/assets/css/typography.css'],
 
   nitro: {
-    preset: 'static',
+    preset: 'cloudflare_module',
+    prerender: {
+      crawlLinks: true,
+      routes: ['/'],
+    },
   },
 
   icon: {
@@ -45,14 +49,12 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       web3formsKey: process.env.NUXT_PUBLIC_WEB3FORMS_KEY || '',
-      testBienestarApiUrl:
-        process.env.NUXT_PUBLIC_TEST_BIENESTAR_API_URL ||
-        'https://casa-test-bienestar-api.<tu-subdominio>.workers.dev',
     },
   },
 
   routeRules: {
     '/servicios/libro': { redirect: '/libro' },
+    '/**': { prerender: true },
   },
 
   app: {

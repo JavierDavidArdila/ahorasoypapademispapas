@@ -25,7 +25,7 @@ importers:
         version: 2.1.0(@types/node@26.2.0)(magic-string@1.2.0)(magicast@0.5.4)(oxc-parser@0.143.0)(rolldown@1.2.4)(unplugin@3.3.0(esbuild@0.28.2)(rolldown@1.2.4)(rollup@4.62.4)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(unstorage@1.17.5(db0@0.3.4(better-sqlite3@13.0.3))(ioredis@5.11.1(supports-color@10.2.2)))
       '@nuxtjs/seo':
         specifier: 5.3.12
-        version: 5.3.12(09263dde69bc80d600cca0aa5d6853b2)
+        version: 5.3.12(cc2fedb4efcbfa2ef83976af807d3306)
       '@takumi-rs/core':
         specifier: ^2.9.2
         version: 2.9.2(csstype@3.2.3)
@@ -48,6 +48,9 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.3.3
         version: 4.3.3(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0))
+      '@takumi-rs/wasm':
+        specifier: ^2.13.5
+        version: 2.13.5(csstype@3.2.3)
       tailwindcss:
         specifier: ^4.3.3
         version: 4.3.3
@@ -1917,6 +1920,18 @@ packages:
       csstype:
         optional: true
 
+  '@takumi-rs/helpers@2.13.5':
+    resolution: {integrity: sha512-ZuIVNJ258DocE8Wd05gC69vQJoArVpdpYMj+kp9/8pWyci6oyTFtKSrR50zDDTVwpObRHEU3uB9OHeSDHYUVQQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      preact: ^10.0.0
+      react: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      preact:
+        optional: true
+      react:
+        optional: true
+
   '@takumi-rs/helpers@2.9.2':
     resolution: {integrity: sha512-z4PlCBVBZMsxGUV+yfBLl+KASVFsS6byS1g/02tsv9TLeb8NHGpWm0OaENDvInDCv7N2o52eyRNsxaFVBKGqhw==}
     engines: {node: '>=18'}
@@ -1927,6 +1942,15 @@ packages:
       preact:
         optional: true
       react:
+        optional: true
+
+  '@takumi-rs/wasm@2.13.5':
+    resolution: {integrity: sha512-ZyIgbJJUqCtqyrH6/g6MpXrubUd63QMlUeeWS1dP1mxx4OtqZKHB8zipE5LZPERT+68ldQHqKnifFoLlIV0lfw==}
+    engines: {node: '>=20.19'}
+    peerDependencies:
+      csstype: '*'
+    peerDependenciesMeta:
+      csstype:
         optional: true
 
   '@tybys/wasm-util@0.10.3':
@@ -7393,14 +7417,14 @@ snapshots:
       - vite
       - vue
 
-  '@nuxtjs/seo@5.3.12(09263dde69bc80d600cca0aa5d6853b2)':
+  '@nuxtjs/seo@5.3.12(cc2fedb4efcbfa2ef83976af807d3306)':
     dependencies:
       '@nuxt/kit': 4.5.2(magic-string@1.2.0)(magicast@0.5.4)(oxc-parser@0.143.0)(rolldown@1.2.4)(unplugin@3.3.0(esbuild@0.28.2)(rolldown@1.2.4)(rollup@4.62.4)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))
       '@nuxtjs/robots': 6.1.4(7d7a848efe9102ba003473e0fd062c9c)
       '@nuxtjs/sitemap': 8.3.4(7d7a848efe9102ba003473e0fd062c9c)
       nuxt: 4.5.2(@babel/plugin-syntax-jsx@7.29.7(@babel/core@7.29.7(supports-color@10.2.2)))(@babel/plugin-syntax-typescript@7.29.7(@babel/core@7.29.7(supports-color@10.2.2)))(@oxc-project/types@0.144.0)(@types/node@26.2.0)(@vue/compiler-sfc@3.5.41)(better-sqlite3@13.0.3)(cac@7.0.0)(db0@0.3.4(better-sqlite3@13.0.3))(esbuild@0.28.2)(eslint@10.8.1(jiti@2.7.0)(supports-color@10.2.2))(ioredis@5.11.1(supports-color@10.2.2))(lightningcss@1.33.0)(magicast@0.5.4)(optionator@0.9.4)(oxc-parser@0.143.0)(rolldown@1.2.4)(rollup-plugin-visualizer@7.1.1(rolldown@1.2.4)(rollup@4.62.4))(rollup@4.62.4)(srvx@0.11.22)(supports-color@10.2.2)(terser@5.50.0)(typescript@5.9.3)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0))(vue-tsc@3.3.10(typescript@5.9.3))(yaml@2.9.0)
       nuxt-link-checker: 5.1.3(cef9326fe93dfe83e922cd40355888cf)
-      nuxt-og-image: 6.7.8(17515b28ffcdc5e7856fb8d2ba846c95)
+      nuxt-og-image: 6.7.8(b68106ee0a7d2472923efeb202bbdda7)
       nuxt-schema-org: 6.2.9(91bd2b89717eba61673a98fb3d19131e)
       nuxt-seo-utils: 8.4.2(9082446e689c9951c8b334f5eafb7f67)
       nuxt-site-config: 4.2.3(7d7a848efe9102ba003473e0fd062c9c)
@@ -8006,7 +8030,18 @@ snapshots:
       - preact
       - react
 
+  '@takumi-rs/helpers@2.13.5': {}
+
   '@takumi-rs/helpers@2.9.2': {}
+
+  '@takumi-rs/wasm@2.13.5(csstype@3.2.3)':
+    dependencies:
+      '@takumi-rs/helpers': 2.13.5
+    optionalDependencies:
+      csstype: 3.2.3
+    transitivePeerDependencies:
+      - preact
+      - react
 
   '@tybys/wasm-util@0.10.3':
     dependencies:
@@ -10841,7 +10876,7 @@ snapshots:
       - vue
       - zod
 
-  nuxt-og-image@6.7.8(17515b28ffcdc5e7856fb8d2ba846c95):
+  nuxt-og-image@6.7.8(b68106ee0a7d2472923efeb202bbdda7):
     dependencies:
       '@clack/prompts': 1.7.0
       '@nuxt/kit': 4.5.2(magic-string@1.2.0)(magicast@0.5.4)(oxc-parser@0.143.0)(rolldown@1.2.4)(unplugin@3.3.0(esbuild@0.28.2)(rolldown@1.2.4)(rollup@4.62.4)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))
@@ -10877,6 +10912,7 @@ snapshots:
       unstorage: 1.17.5(db0@0.3.4(better-sqlite3@13.0.3))(ioredis@5.11.1(supports-color@10.2.2))
     optionalDependencies:
       '@takumi-rs/core': 2.9.2(csstype@3.2.3)
+      '@takumi-rs/wasm': 2.13.5(csstype@3.2.3)
       fontless: 0.2.1(db0@0.3.4(better-sqlite3@13.0.3))(ioredis@5.11.1(supports-color@10.2.2))(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0))
       nitropack: 2.13.4(better-sqlite3@13.0.3)(oxc-parser@0.143.0)(rolldown@1.2.4)(srvx@0.11.22)(supports-color@10.2.2)(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0))
       tailwindcss: 4.3.3

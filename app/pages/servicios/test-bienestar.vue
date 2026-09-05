@@ -7,5 +7,5 @@ useSeoMeta({
 </script>
 
 <template>
-  <TestBienestarTestBienestar />
+  <TestBienestar />
 </template>

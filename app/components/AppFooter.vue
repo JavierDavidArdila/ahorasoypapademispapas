@@ -2,10 +2,10 @@
 const anioActual = new Date().getFullYear()
 
 const redes = [
-  { nombre: 'X', icono: '/images/redes/x.png' },
-  { nombre: 'Facebook', icono: '/images/redes/facebook.png' },
-  { nombre: 'Instagram', icono: '/images/redes/instagram.png' },
-  { nombre: 'LinkedIn', icono: '/images/redes/linkedin.png' },
+  { nombre: 'X', icono: '/images/redes/x-blanco.png' },
+  { nombre: 'Facebook', icono: '/images/redes/facebook-blanco.png' },
+  { nombre: 'Instagram', icono: '/images/redes/instagram-blanco.png' },
+  { nombre: 'LinkedIn', icono: '/images/redes/linkedin-blanco.png' },
 ]
 
 const legal = [

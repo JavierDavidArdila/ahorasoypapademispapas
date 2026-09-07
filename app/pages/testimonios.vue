@@ -74,7 +74,7 @@ useSeoMeta({
             </span>
           </div>
           <div
-            class="size-20 sm:size-28 md:size-40 shrink-0 overflow-hidden rounded-[var(--radius-editorial)] border-4 border-white/15"
+            class="size-20 sm:size-28 md:size-40 shrink-0 overflow-hidden rounded-[var(--radius-editorial)] border-4 border-white"
           >
             <NuxtImg
               :src="grupo.imagen"

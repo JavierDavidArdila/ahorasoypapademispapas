@@ -19,7 +19,7 @@ function textoCta(servicio: { path: string, disponible?: boolean }) {
 
 const apoyo = [
   { nombre: 'Universidad de los Andes', logo: '/images/apoyo/uniandes.png' },
-  { nombre: 'El Tiempo', logo: '/images/apoyo/el-tiempo.png' },
+  { nombre: 'El Tiempo', logo: '/images/apoyo/el-tiempo.png', alto: 'h-9' },
   { nombre: 'Gobernación de Cundinamarca', logo: '/images/apoyo/cundinamarca.png' },
   { nombre: 'Comfama', logo: '/images/apoyo/comfama.png' },
   { nombre: 'Fedecajas', logo: '/images/apoyo/fedecajas.png' },
@@ -30,13 +30,12 @@ const apoyo = [
   { nombre: 'II Congreso Empresarial de Economía Plateada', logo: '/images/apoyo/economia-plateada.png' },
   { nombre: 'Reloj de Arena', logo: '/images/apoyo/reloj-de-arena.png' },
   { nombre: 'TENA', logo: '/images/apoyo/tena.png' },
-  { nombre: 'Trustomorrow Insurance', logo: '/images/apoyo/trusttomorrow.png' },
   { nombre: 'SAEJ 50', logo: '/images/apoyo/saej.png' },
   { nombre: 'Club Lectores', logo: '/images/apoyo/club-lectores.png' },
   { nombre: 'Plaza Central', logo: '/images/apoyo/plaza-central.png' },
   { nombre: 'Alcaldía de Paipa', logo: '/images/apoyo/alcaldia-paipa.png' },
   { nombre: 'Alcaldía Municipal de Anapoima', logo: '/images/apoyo/alcaldia-anapoima.png' },
-  { nombre: 'Fundación Acción Familiar Alzheimer Colombia', logo: '/images/apoyo/afacol.png' },
+  { nombre: 'Fundación Acción Familiar Alzheimer Colombia', logo: '/images/apoyo/afacol.png', alto: 'h-20' },
   { nombre: 'iConversación — Instituto de la Conversación', logo: '/images/apoyo/iconversacion.png' },
 ]
 
@@ -133,7 +132,11 @@ useSeoMeta({
               />
             </div>
             <div class="flex flex-col gap-3 p-6 flex-1">
-              <h3 class="text-xl text-[var(--color-azul-alto)]">{{ servicio.titulo }}</h3>
+              <h3 v-if="servicio.path === '/servicios/plataforma-virtual'" class="text-xl text-[var(--color-azul-alto)]">
+                <span class="block">C.A.S.A</span>
+                <span class="block">Plataforma virtual de cuidado</span>
+              </h3>
+              <h3 v-else class="text-xl text-[var(--color-azul-alto)]">{{ servicio.titulo }}</h3>
               <p class="text-sm text-[var(--color-tinta-suave)] leading-relaxed flex-1">
                 {{ servicio.resumenCorto }}
               </p>
@@ -160,21 +163,20 @@ useSeoMeta({
     <section class="bg-white">
       <div class="mx-auto max-w-6xl px-6 py-20 md:py-28 grid md:grid-cols-2 gap-16">
         <div class="flex flex-col gap-6">
-          <p class="kicker text-[var(--color-azul)]">Bio</p>
-          <h2 class="text-4xl md:text-5xl font-bold text-[var(--color-azul-alto)]">Fernando Roca Correa</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-[var(--color-azul-alto)]">Fernando Roca Correa</h2>
           <NuxtImg
             src="/images/bio/home-bio.png"
             alt="Fernando Roca Correa"
             class="w-full max-w-md mx-auto rounded-[var(--radius-editorial)] object-cover shadow-md"
             loading="lazy"
             width="640"
-            height="426"
+            height="800"
           />
           <p class="text-[var(--color-tinta-suave)] leading-relaxed">
             Fundador de <strong>Ahora soy papá de mis papás / Cuidar es 360 SAS</strong>, es
             Diplomado en Nueva Longevidad y abanderado del cuidado…
           </p>
-          <UiBotonCta to="/biografia">Leer Más</UiBotonCta>
+          <UiBotonCta to="/biografia" class="w-fit mx-auto">Leer Más</UiBotonCta>
         </div>
 
         <div class="flex flex-col gap-8">
@@ -213,7 +215,8 @@ useSeoMeta({
               <img
                 :src="marca.logo"
                 :alt="i >= apoyo.length ? '' : marca.nombre"
-                class="h-14 w-auto object-contain"
+                class="w-auto object-contain"
+                :class="marca.alto ?? 'h-14'"
                 loading="lazy"
                 decoding="async"
               >
@@ -224,7 +227,7 @@ useSeoMeta({
     </section>
 
     <!-- Redes sociales -->
-    <section class="bg-[var(--color-papel-alto)] border-y border-[var(--color-linea)]">
+    <section class="bg-white border-y border-[var(--color-linea)]">
       <div class="mx-auto max-w-3xl px-6 py-20 md:py-24 text-center">
         <h2 class="text-2xl md:text-3xl font-bold text-[var(--color-azul-alto)]">¡Síguenos en nuestras redes!</h2>
         <p class="kicker text-[var(--color-azul)] mt-2">LinkedIn e Instagram</p>
@@ -247,12 +250,14 @@ useSeoMeta({
     </section>
 
     <!-- CTA final -->
-    <section class="mx-auto max-w-6xl px-6 py-20 md:py-28 text-center">
-      <h2 class="mx-auto max-w-2xl text-3xl md:text-4xl">
-        ¿Tu familia o tu empresa necesita prepararse para el cuidado de una persona mayor?
-      </h2>
-      <div class="mt-6">
-        <UiBotonCta to="/contacto">Comuniquémonos</UiBotonCta>
+    <section class="bg-[var(--color-amarillo)]">
+      <div class="mx-auto max-w-6xl px-6 py-20 md:py-28 text-center">
+        <h2 class="mx-auto max-w-2xl text-3xl md:text-4xl text-[var(--color-azul-alto)]">
+          ¿Tu familia o tu empresa necesita prepararse para el cuidado de una persona mayor?
+        </h2>
+        <div class="mt-6">
+          <UiBotonCta to="/contacto">Comuniquémonos</UiBotonCta>
+        </div>
       </div>
     </section>
   </div>

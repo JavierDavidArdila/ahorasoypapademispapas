@@ -48,7 +48,7 @@ const enlaces = [
         >
           <button
             type="button"
-            class="flex items-center gap-1 text-[var(--color-azul)] hover:text-[var(--color-azul-alto)] transition-colors"
+            class="flex items-center gap-1 uppercase text-[var(--color-azul)] hover:text-[var(--color-azul-alto)] transition-colors"
             :aria-expanded="dropdownAbierto"
             @click="dropdownAbierto = !dropdownAbierto"
           >
@@ -111,7 +111,7 @@ const enlaces = [
 
       <button
         type="button"
-        class="flex items-center justify-between py-2 text-left"
+        class="flex items-center justify-between py-2 text-left uppercase"
         @click="dropdownMovilAbierto = !dropdownMovilAbierto"
       >
         Productos y Servicios

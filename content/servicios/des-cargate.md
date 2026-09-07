@@ -1,5 +1,6 @@
 ---
 titulo: "Des cárgate"
+subtitulo: "¡Pasar de Cuidar a Respirar!"
 resumenCorto: "Encuentros presenciales y virtuales para pasar de Cuidar a Respirar — un espacio para el cuidador, no para el paciente."
 icono: ph:wind
 orden: 4
@@ -13,8 +14,6 @@ cta:
 seoTitulo: "Dés Cárgate — encuentros para cuidadores"
 seoDescripcion: "De Cuidar a Respirar: encuentros presenciales y virtuales donde el cuidador, por una vez, es el protagonista del espacio."
 ---
-
-**¡Pasar de Cuidar a Respirar!**
 
 Encuentros presenciales y virtuales creados de cuidadores para cuidadores, donde nos cuidamos todos, sin hablar del cuidado sino teniendo espacios de respiro y experiencias únicas que nos relajen y nos encuentren con nosotros mismos. Un espacio para descargarnos del cuidado y recargar el propósito de cuidar.
 

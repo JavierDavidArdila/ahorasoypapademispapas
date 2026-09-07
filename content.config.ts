@@ -7,6 +7,7 @@ export default defineContentConfig({
       source: 'servicios/*.md',
       schema: z.object({
         titulo: z.string(),
+        subtitulo: z.string().optional(),
         resumenCorto: z.string(),
         icono: z.string(),
         orden: z.number(),

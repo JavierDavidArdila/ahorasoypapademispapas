@@ -8,7 +8,7 @@ useSeoMeta({
 <template>
   <div class="mx-auto max-w-2xl px-6 py-20 md:py-28">
     <p class="kicker text-[var(--color-azul)] mb-4">Legal</p>
-    <h1 class="text-4xl md:text-5xl mb-6">Política de Reembolso</h1>
+    <h1 class="text-4xl md:text-5xl mb-6 text-[var(--color-azul)]">Política de Reembolso</h1>
     <p class="text-lg text-[var(--color-tinta-suave)] leading-relaxed">
       Estamos preparando el texto de esta página. Si tienes alguna pregunta mientras tanto,
       escríbenos a

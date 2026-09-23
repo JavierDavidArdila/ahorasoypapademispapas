@@ -2,7 +2,7 @@
 const anioActual = new Date().getFullYear()
 
 const redes = [
-  { nombre: 'X', icono: '/images/redes/x-blanco.png' },
+  { nombre: 'X', icono: '/images/redes/x-blanco.png', url: 'https://x.com/PapaDeMisPapas' },
   { nombre: 'Facebook', icono: '/images/redes/facebook-blanco.png', url: 'https://www.facebook.com/people/Ahora-Soy-Pap%C3%A1-de-mis-Pap%C3%A1s/100063985862865/' },
   { nombre: 'Instagram', icono: '/images/redes/instagram-blanco.png', url: 'https://www.instagram.com/papademispapas/' },
   { nombre: 'LinkedIn', icono: '/images/redes/linkedin-blanco.png', url: 'https://www.linkedin.com/company/ahora-soy-papa-de-mis-papas/' },

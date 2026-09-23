@@ -3,9 +3,9 @@ const anioActual = new Date().getFullYear()
 
 const redes = [
   { nombre: 'X', icono: '/images/redes/x-blanco.png' },
-  { nombre: 'Facebook', icono: '/images/redes/facebook-blanco.png' },
-  { nombre: 'Instagram', icono: '/images/redes/instagram-blanco.png' },
-  { nombre: 'LinkedIn', icono: '/images/redes/linkedin-blanco.png' },
+  { nombre: 'Facebook', icono: '/images/redes/facebook-blanco.png', url: 'https://www.facebook.com/people/Ahora-Soy-Pap%C3%A1-de-mis-Pap%C3%A1s/100063985862865/' },
+  { nombre: 'Instagram', icono: '/images/redes/instagram-blanco.png', url: 'https://www.instagram.com/papademispapas/' },
+  { nombre: 'LinkedIn', icono: '/images/redes/linkedin-blanco.png', url: 'https://www.linkedin.com/company/ahora-soy-papa-de-mis-papas/' },
 ]
 
 const legal = [
@@ -52,14 +52,16 @@ const legal = [
 
     <div class="border-t border-white/10 px-6 py-8 text-center">
       <div class="flex items-center justify-center gap-4">
-        <span
+        <component
+          :is="red.url ? 'a' : 'span'"
           v-for="red in redes"
           :key="red.nombre"
-          class="flex size-9 items-center justify-center rounded-full bg-white/10"
-          :title="`${red.nombre} — próximamente`"
+          v-bind="red.url ? { href: red.url, target: '_blank', rel: 'noopener noreferrer' } : {}"
+          class="flex size-9 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20"
+          :title="red.url ? red.nombre : `${red.nombre} — próximamente`"
         >
           <img :src="red.icono" :alt="red.nombre" class="size-5 object-contain">
-        </span>
+        </component>
       </div>
       <p class="text-xs text-white/60 mt-4">
         © {{ anioActual }} Todos los Derechos Reservados por Cuidar es 360 SAS

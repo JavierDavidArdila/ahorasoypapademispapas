@@ -233,18 +233,24 @@ useSeoMeta({
         <p class="kicker text-[var(--color-azul)] mt-2">LinkedIn e Instagram</p>
 
         <div class="grid grid-cols-2 gap-6 mt-10">
-          <span
-            class="aspect-square flex items-center justify-center rounded-[var(--radius-editorial)] bg-[var(--color-papel)] border border-[var(--color-linea)]"
-            title="LinkedIn — próximamente"
+          <a
+            href="https://www.linkedin.com/company/ahora-soy-papa-de-mis-papas/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="aspect-square flex items-center justify-center rounded-[var(--radius-editorial)] bg-[var(--color-papel)] border border-[var(--color-linea)] transition hover:border-[var(--color-azul)]"
+            title="LinkedIn"
           >
             <img src="/images/redes/linkedin.png" alt="LinkedIn" class="size-14 object-contain">
-          </span>
-          <span
-            class="aspect-square flex items-center justify-center rounded-[var(--radius-editorial)] bg-[var(--color-papel)] border border-[var(--color-linea)]"
-            title="Instagram — próximamente"
+          </a>
+          <a
+            href="https://www.instagram.com/papademispapas/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="aspect-square flex items-center justify-center rounded-[var(--radius-editorial)] bg-[var(--color-papel)] border border-[var(--color-linea)] transition hover:border-[var(--color-azul)]"
+            title="Instagram"
           >
             <img src="/images/redes/instagram.png" alt="Instagram" class="size-14 object-contain">
-          </span>
+          </a>
         </div>
       </div>
     </section>

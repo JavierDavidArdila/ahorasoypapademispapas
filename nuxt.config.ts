@@ -17,11 +17,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css', '~/assets/css/typography.css'],
 
   nitro: {
-    preset: 'cloudflare_module',
-    prerender: {
-      crawlLinks: true,
-      routes: ['/'],
-    },
+    preset: 'static',
   },
 
   icon: {
@@ -54,7 +50,6 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/servicios/libro': { redirect: '/libro' },
-    '/**': { prerender: true },
   },
 
   app: {

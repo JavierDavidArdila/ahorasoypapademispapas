@@ -48,9 +48,6 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.3.3
         version: 4.3.3(vite@8.2.1(@types/node@26.2.0)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0))
-      '@takumi-rs/wasm':
-        specifier: ^2.13.5
-        version: 2.13.5(csstype@3.2.3)
       tailwindcss:
         specifier: ^4.3.3
         version: 4.3.3
@@ -8030,7 +8027,8 @@ snapshots:
       - preact
       - react
 
-  '@takumi-rs/helpers@2.13.5': {}
+  '@takumi-rs/helpers@2.13.5':
+    optional: true
 
   '@takumi-rs/helpers@2.9.2': {}
 
@@ -8042,6 +8040,7 @@ snapshots:
     transitivePeerDependencies:
       - preact
       - react
+    optional: true
 
   '@tybys/wasm-util@0.10.3':
     dependencies:

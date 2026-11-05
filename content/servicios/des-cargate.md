@@ -11,6 +11,17 @@ borrador: false
 cta:
   texto: "Escríbenos por WhatsApp"
   destino: "https://wa.me/573153350785?text=Quiero%20estar%20en%20D%C3%A9s%20c%C3%A1rgate"
+proximoEncuentro:
+  titulo: "YO PRIMERO: darte un lugar también es cuidar"
+  fecha: "Noviembre 28 · De 9 a.m. a 11 a.m."
+  ciudad: "Bogotá"
+  formato: "Presencial / Híbrido"
+  lugar: "Carrera 78 #127d – 60. Lindaraja. Calucé Senior Living"
+  inscripcion: "www.clubplateado.com del Banco Popular"
+  inscripcionUrl: "https://www.clubplateado.com"
+  textos:
+    - "Entre tantas responsabilidades por cuidar a otros, tus propias necesidades suelen quedar para después."
+    - "El Club Plateado del Banco Popular te invita a un encuentro para volver a incluirte en tu vida. Fernando Roca Correa, cuidador, autor de ¡Ahora soy papá de mis papás! y creador de Des cárgate, y Rita Karaniuskas, experta en comunicación no verbal y detección de mentiras, unen experiencia y herramientas para ayudarte a reconocer lo que te pesa, expresar lo que necesitas y encontrar un punto medio entre cuidar y cuidarte."
 seoTitulo: "Dés Cárgate — encuentros para cuidadores"
 seoDescripcion: "De Cuidar a Respirar: encuentros presenciales y virtuales donde el cuidador, por una vez, es el protagonista del espacio."
 ---

@@ -1,14 +1,14 @@
 ---
-titulo: "Plataforma virtual de cuidado"
-resumenCorto: "Un espacio digital para cuidadores, con recursos, comunidad y acompañamiento. Próximamente disponible."
+titulo: "C.A.S.A. Programa virtual del cuidado"
+resumenCorto: "C.A.S.A Programa virtual del cuidado a distancia. Un espacio digital para el bienestar emocional de cuidadores en el exterior. Con recursos, comunidad y acompañamiento."
 icono: ph:device-mobile-camera
 orden: 6
-disponible: false
+disponible: true
 acento: salvia
 imagenPortada: "/images/servicios/plataforma-virtual.jpg"
 borrador: false
-seoTitulo: "Plataforma Virtual — próximamente"
-seoDescripcion: "Un nuevo espacio digital de Fernando Roca Correa para cuidadores, con recursos y comunidad. Próximamente disponible."
+seoTitulo: "C.A.S.A. Programa virtual del cuidado"
+seoDescripcion: "Un nuevo espacio digital de Fernando Roca Correa para cuidadores, con recursos y comunidad."
 ---
 
 Pronto aquí tendrás a un clic el mayor apoyo y herramientas para mejorar tus emociones cuando cuidas.

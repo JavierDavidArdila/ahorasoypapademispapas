@@ -11,12 +11,12 @@ const mensaje = ref('')
 const honeypot = ref('')
 
 const asuntos = [
-  'Libro',
+  'Libros',
   'Conferencias y cursos',
   'Programa Trabajador-Cuidador',
   'Des Cárgate',
   'Mentorías de familia',
-  'Plataforma virtual',
+  'C.A.S.A. Programa virtual del cuidado',
   'Prensa / medios',
   'Otro',
 ]

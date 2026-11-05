@@ -3,7 +3,10 @@ const { data: servicios } = await useAsyncData('header-servicios', () =>
   queryCollection('servicios').order('orden', 'ASC').all()
 )
 
+const URL_CASA = 'https://casacuidadoadistancia.com/'
+
 function rutaServicio(servicio: { path: string }) {
+  if (servicio.path === '/servicios/plataforma-virtual') return URL_CASA
   return servicio.path === '/servicios/libro' ? '/libro' : servicio.path
 }
 
@@ -64,6 +67,7 @@ const enlaces = [
                 v-for="servicio in servicios"
                 :key="servicio.path"
                 :to="rutaServicio(servicio)"
+                :target="rutaServicio(servicio) === URL_CASA ? '_blank' : undefined"
                 class="block px-4 py-2.5 text-sm font-medium text-[var(--color-azul)] hover:bg-[var(--color-papel-alto)] hover:text-[var(--color-azul-alto)] transition-colors"
                 @click="dropdownAbierto = false"
               >
@@ -122,6 +126,7 @@ const enlaces = [
           v-for="servicio in servicios"
           :key="servicio.path"
           :to="rutaServicio(servicio)"
+          :target="rutaServicio(servicio) === URL_CASA ? '_blank' : undefined"
           class="py-1.5 text-sm font-medium text-[var(--color-azul)]"
           @click="menuAbierto = false"
         >

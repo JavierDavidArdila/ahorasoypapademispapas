@@ -5,6 +5,8 @@ defineProps<{
   imagen?: string
   titular: string
   url?: string
+  textoBoton?: string
+  descripcion?: string
 }>()
 
 function formatearFecha(fecha: string | Date) {
@@ -30,6 +32,7 @@ function formatearFecha(fecha: string | Date) {
       width="320"
       height="240"
     />
+    <p v-if="descripcion" class="text-sm leading-relaxed text-[var(--color-tinta-suave)]">{{ descripcion }}</p>
     <a
       v-if="url"
       :href="url"
@@ -37,7 +40,7 @@ function formatearFecha(fecha: string | Date) {
       rel="noopener noreferrer"
       class="inline-flex w-fit items-center gap-2 rounded-[var(--radius-editorial)] border-2 border-[var(--color-amarillo)] px-4 py-2 kicker text-[var(--color-azul-alto)] hover:bg-[var(--color-amarillo)] transition-colors"
     >
-      Ir a la entrevista
+      {{ textoBoton || 'Ir a la entrevista' }}
     </a>
   </div>
 </template>

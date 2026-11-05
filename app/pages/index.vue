@@ -7,13 +7,16 @@ const { data: testimonios } = await useAsyncData('home-testimonios', () =>
   queryCollection('testimonios').where('destacadoEnHome', '=', true).order('orden', 'ASC').all()
 )
 
+const URL_CASA = 'https://casacuidadoadistancia.com/'
+
 function rutaServicio(servicio: { path: string }) {
+  if (servicio.path === '/servicios/plataforma-virtual') return URL_CASA
   return servicio.path === '/servicios/libro' ? '/libro' : servicio.path
 }
 
 function textoCta(servicio: { path: string, disponible?: boolean }) {
   if (!servicio.disponible) return 'Próximamente'
-  if (servicio.path === '/servicios/libro') return 'Adquiérelo Aquí'
+  if (servicio.path === '/servicios/libro') return 'Adquiérelos'
   return 'Leer Más'
 }
 
@@ -132,17 +135,14 @@ useSeoMeta({
               />
             </div>
             <div class="flex flex-col gap-3 p-6 flex-1">
-              <h3 v-if="servicio.path === '/servicios/plataforma-virtual'" class="text-xl text-[var(--color-azul-alto)]">
-                <span class="block">C.A.S.A</span>
-                <span class="block">Plataforma virtual de cuidado</span>
-              </h3>
-              <h3 v-else class="text-xl text-[var(--color-azul-alto)]">{{ servicio.titulo }}</h3>
+              <h3 class="text-xl text-[var(--color-azul-alto)]">{{ servicio.titulo }}</h3>
               <p class="text-sm text-[var(--color-tinta-suave)] leading-relaxed flex-1">
                 {{ servicio.resumenCorto }}
               </p>
               <NuxtLink
                 v-if="servicio.disponible"
                 :to="rutaServicio(servicio)"
+                :target="rutaServicio(servicio) === URL_CASA ? '_blank' : undefined"
                 class="mt-2 inline-flex w-fit items-center gap-2 rounded-[var(--radius-editorial)] bg-[var(--color-azul)] px-4 py-2 kicker text-white transition-colors hover:bg-[var(--color-azul-alto)]"
               >
                 {{ textoCta(servicio) }}

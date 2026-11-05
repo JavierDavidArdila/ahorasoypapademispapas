@@ -1,6 +1,6 @@
 ---
-titulo: "Libro"
-resumenCorto: "Preparación y prevención: el único libro guía escrito en Iberoamérica desde la experiencia real de un cuidador."
+titulo: "Libros"
+resumenCorto: "Ahora soy papá de mis papás. Preparación y prevención: el único libro guía escrito en Iberoamérica desde la experiencia real de un cuidador. Versión Latinoamérica para el cuidado directo, presencial. Versión Norteamérica para cuidar a la distancia."
 icono: ph:book-open-text
 orden: 1
 disponible: true

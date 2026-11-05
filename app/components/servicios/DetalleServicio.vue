@@ -42,5 +42,35 @@ const altoImagen = props.servicio.path === '/servicios/des-cargate' ? 540 : 800
         />
       </div>
     </div>
+
+    <section
+      v-if="servicio.proximoEncuentro"
+      class="mx-auto max-w-6xl px-6 pb-20 md:pb-28"
+    >
+      <div class="rounded-[var(--radius-editorial)] bg-[var(--color-papel-alto)] border-2 border-[var(--color-amarillo)] p-8 md:p-10 flex flex-col gap-5">
+        <p class="kicker text-[var(--color-tinta-suave)]">Próximo encuentro</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-[var(--color-azul-alto)]">{{ servicio.proximoEncuentro.titulo }}</h2>
+        <dl class="grid sm:grid-cols-2 gap-x-8 gap-y-3 text-[var(--color-azul)]">
+          <div><dt class="kicker">Fecha</dt><dd>{{ servicio.proximoEncuentro.fecha }}</dd></div>
+          <div><dt class="kicker">Ciudad</dt><dd>{{ servicio.proximoEncuentro.ciudad }}</dd></div>
+          <div><dt class="kicker">Formato</dt><dd>{{ servicio.proximoEncuentro.formato }}</dd></div>
+          <div><dt class="kicker">Lugar</dt><dd>{{ servicio.proximoEncuentro.lugar }}</dd></div>
+          <div class="sm:col-span-2">
+            <dt class="kicker">Inscripciones en</dt>
+            <dd>
+              <a
+                v-if="servicio.proximoEncuentro.inscripcionUrl"
+                :href="servicio.proximoEncuentro.inscripcionUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline hover:text-[var(--color-azul-alto)]"
+              >{{ servicio.proximoEncuentro.inscripcion }}</a>
+              <template v-else>{{ servicio.proximoEncuentro.inscripcion }}</template>
+            </dd>
+          </div>
+        </dl>
+        <p v-for="texto in servicio.proximoEncuentro.textos" :key="texto" class="leading-relaxed">{{ texto }}</p>
+      </div>
+    </section>
   </div>
 </template>

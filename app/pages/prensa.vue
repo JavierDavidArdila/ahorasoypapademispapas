@@ -4,6 +4,7 @@ const { data: entradas } = await useAsyncData('prensa-listado', () =>
 )
 
 const ordenGrupos = [
+  'Telemundo',
   'Spotify',
   'Blu radio',
   'Semana',
@@ -51,6 +52,8 @@ useSeoMeta({
             :imagen="entrada.imagen"
             :titular="entrada.titular"
             :url="entrada.url"
+            :texto-boton="entrada.textoBoton"
+            :descripcion="entrada.descripcion"
           />
         </div>
       </div>
